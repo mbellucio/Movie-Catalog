@@ -9,14 +9,31 @@
     </div>
   </div>
 </div>
+
 <div class="container w-50 mt-3">
-  
   <div class="shadow container-sm mt-4 p-4 bg-dark-subtle rounded text-center">
     <h3 class="pb-3">Movies from <%= @director.name %></h3>
-    <% @movies.each do |movie| %>
-      <div class="row py-2 my-2 rounded border border-dark">
-        <%= link_to "#{movie.title} (#{movie.release_date.strftime('%Y')})", movie_path(movie.id), class: "btn" %>
-      </div>
-    <% end %>
+    <div class="row">
+      <% @movies.each do |movie| %>
+        <div class="col-sm-3 w-25 position-relative pt-2">
+          <a href="<%= movie_path(movie) %>">
+          <div class="shadow card">          
+            <img src="<%= movie.image_url%>" alt="image" class="card-img-top">
+            <div class="position-absolute top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-start bg-dark bg-opacity-50  bg-gradient">
+              <div class="text-white fw-semibold pt-4"><%= "#{movie.release_date.strftime("%Y")}" %></div>
+            </div>
+            <div class="position-absolute top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-start">
+              <div class="text-light fw-semibold pt-1"><%= movie.title %></div>
+            </div>
+          </div>
+          </a>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
+
+
+
+
+   

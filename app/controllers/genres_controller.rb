@@ -4,8 +4,8 @@ class GenresController < ApplicationController
   end
 
   def show
-    genre = Genre.find(params[:id])
-    @movies = genre.movies
+    @genre = Genre.find(params[:id])
+    @movies = @genre.movies
   end
 
   def genre_params

@@ -16,6 +16,7 @@ class MoviesController < ApplicationController
       :duration,
       :director_id,
       :genre_id,
+      :image_url,
       )
   end
 

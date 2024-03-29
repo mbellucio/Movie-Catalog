@@ -1,0 +1,16 @@
+
+<div class="container w-50 ">
+  <div class="shadow container-sm mt-4 p-4 bg-dark-subtle rounded">
+    <% @genres.each do |genre| %>
+      <div class="row py-2 my-2 rounded border border-dark">
+        <%= link_to genre.name, genre_path(genre.id), class: "btn" %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="container-sm mt-2 mb-4">
+    <%= link_to new_genre_path, class: "btn btn-dark" do %>
+      Add new Genre
+    <% end %>
+  </div>
+</div>

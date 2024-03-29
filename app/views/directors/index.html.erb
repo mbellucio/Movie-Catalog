@@ -1,0 +1,16 @@
+<div class="container w-50 ">
+  <div class="shadow container-sm mt-4 p-4 bg-dark-subtle rounded">
+    <% @directors.each do |director| %>
+      <div class="row py-2 my-2 rounded border border-dark">
+        <%= link_to director.name, director_path(director.id), class: "btn" %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="mt-2 mb-4">
+    <%= link_to new_director_path, class: "btn btn-dark" do %>
+      Add new Director
+    <% end %>
+  </div>
+</div>
+

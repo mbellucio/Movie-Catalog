@@ -1,0 +1,20 @@
+<div class="container w-75 ">
+  <div class="shadow container-sm mt-4 p-4 bg-dark-subtle rounded">
+    <div class="row">
+      <% @movies.each do |movie| %>
+      <div>
+        <img src="https://m.media-amazon.com/images/I/81kz06oSUeL._AC_SL1500_.jpg" alt="image" class="img-fluid">
+        <%= link_to "#{movie.title} (#{movie.release_date.strftime('%Y')})", movie_path(movie.id), class: "btn" %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="container-sm mt-2 mb-4">
+    <%= link_to new_movie_path, class: "btn btn-dark" do %>
+      Add new Movie
+    <% end %>
+  </div>
+</div>
+
+

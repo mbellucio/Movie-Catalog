@@ -1,0 +1,16 @@
+<div class="container w-50 ">
+  <div class="shadow container-sm mt-4 p-4 bg-dark-subtle rounded">
+    <p>Title: <span class="fw-bold"><%= @movie.title%></span></p>
+    <p>Directed by: <span class="fw-bold"><%= @movie.director.name%></span></p>
+    <p>Genre: <span class="fw-bold"><%= @movie.genre.name%></span></p>
+    <p>Released: <span class="fw-bold"><%= @movie.release_date%></span></p>
+    <p>Country of origin: <span class="fw-bold"><%= @movie.country%></span></p>
+    <p>Duration: <span class="fw-bold"><%= @movie.duration%></span> min</p>
+    <p>Summary: <span><%= @movie.summary%></span></p>
+  </div>
+
+  <div class="container-sm mt-2 mb-4">
+    <%= link_to "Edit", edit_movie_path, class: "btn btn-dark"%>
+  </div>
+</div>
+

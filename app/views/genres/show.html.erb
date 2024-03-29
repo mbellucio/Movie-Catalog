@@ -1,0 +1,13 @@
+<div class="container w-50 ">
+  <div class="shadow container-sm mt-4 p-4 bg-dark-subtle rounded">
+    <% @movies.each do |movie| %>
+      <div class="row py-2 my-2 rounded border border-dark">
+        <%= link_to "#{movie.title} (#{movie.release_date.strftime('%Y')})", movie_path(movie.id), class: "btn" %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="container-sm mt-2 mb-4">
+    <%= link_to "Edit Genre", edit_genre_path, class: "btn btn-dark"%>
+  </div>
+</div>

@@ -6,6 +6,7 @@
     <p>Released: <span class="fw-bold"><%= @movie.release_date%></span></p>
     <p>Country of origin: <span class="fw-bold"><%= @movie.country%></span></p>
     <p>Duration: <span class="fw-bold"><%= @movie.duration%></span> min</p>
+    <p>Released?: <span class="fw-bold"><%=@movie.is_released ? "Yes" : "No"%></span></p>
     <p>Summary: <span><%= @movie.summary%></span></p>
   </div>
 

@@ -2,17 +2,18 @@
   <div class="shadow container-sm mt-4 p-4 bg-dark-subtle rounded">
     <div class="row">
       <% @movies.each do |movie| %>
-        <div class="col-sm-4 w-25 position-relative pt-4">
+        <div class="col-sm-4 w-25 position-relative pt-2 text-center">
+          <p><%= movie.is_released ? "Available" : "Coming Soon..." %></p>
           <a href="<%= movie_path(movie) %>">
-          <div class="shadow card">          
-            <img src="<%= movie.image_url%>" alt="image" class="card-img-top">
-            <div class="position-absolute top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-start bg-dark bg-opacity-50  bg-gradient">
-              <div class="text-white fw-semibold fs-5 pt-5"><%= "#{movie.genre.name} • #{movie.release_date.strftime("%Y")}" %></div>
+            <div class="shadow card">          
+              <img src="<%= movie.image_url%>" alt="image" class="card-img-top">
+              <div class="position-absolute top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-start bg-dark bg-opacity-50  bg-gradient">
+                <div class="text-white fw-semibold fs-5 pt-5"><%= "#{movie.genre.name} • #{movie.release_date.strftime("%Y")}" %></div>
+              </div>
+              <div class="position-absolute top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-start">
+                <div class="text-light fw-semibold fs-2 pt-1"><%= movie.title %></div>
+              </div>
             </div>
-            <div class="position-absolute top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-start">
-              <div class="text-light fw-semibold fs-2 pt-1"><%= movie.title %></div>
-            </div>
-          </div>
           </a>
         </div>
       <% end %>
